@@ -1,12 +1,12 @@
 # Simple-Password-Manager
-Simple Password Manager is a bash script able to manage passwords, relying in the gpg encryption for the 'database' security.  
+Simple Password Manager is a POSIX shell script able to manage passwords, relying in the gpg encryption for the 'database' security.  
 
 ### Capabilities:  
 - Generate random passwords that may contain the following chars: ```A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~```  
 - Add, update, query and delete a password to the pgp encrypted 'database'  
 
 ### Installation:  
-To install, copy the ```password-manager.sh``` script to ```/usr/local/bin```. Note that you will need admin permissions for it.  
+To install, copy the ```password-manager.sh``` script to ```/usr/local/bin```. Note that you will (hopefully) need root permissions for that.  
 Alternatively, copy the script to any other path included in PATH.  
 
 Do not forget to ```chmod +x``` the script in the new location.  
@@ -35,7 +35,7 @@ The ```delete``` action will delete the service desired together with its passwo
 
 The ```update``` action is not implemented yet.  
 
-All actions perform some common actions. Those actions are:  
+All actions perform some common steps. Those steps are:  
 1) Copy the database elsewhere  
 2) Unlock/decrypt the copied database  
 3) Delete copied database  
@@ -47,5 +47,5 @@ All actions perform some common actions. Those actions are:
 ### Dependencies:
 The program has some dependencies for execution:  
 - ```GnuPG```  
-- ```tput``` (For color feedback)  
+- ```tr``` and ```fold```
 - ```xsel``` or ```xclip``` (For automatic clipboard copy - *OPTIONAL*)
